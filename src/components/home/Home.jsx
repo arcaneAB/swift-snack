@@ -1,11 +1,23 @@
-import React from 'react'
+import Navbar from "../Navbar";
+import Category from "../Category";
+import Menu from "../Menu";
+import styled from "styled-components";
 
-function Home() {
+const Container = styled.div`
+  min-height: 100vh;
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  )
-}
-
-export default Home
+    <Container>
+      <Navbar />
+      <Category />
+      <Menu />
+    </Container>
+  );
+};
+export default Home;
