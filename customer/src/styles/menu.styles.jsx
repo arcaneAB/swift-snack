@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import mobile from './Responsive'
 
 export const Container = styled.div`
+  padding-top: 10px;
   width: 99%;
   display: flex;
   flex-wrap: wrap;
