@@ -8,12 +8,13 @@ import Button from 'react-bootstrap/Button'
 
 const btn = {
   backgroundColor: '#FA4A0C',
+  borderRadius:'30px',
   border: 'none',
 }
 const icon = {
   color: '#FA4A0C',
   border: 'none',
-  fontSize: '25px',
+  fontSize: '40px',
 }
 const Container = styled.div`
   width: 100%;
@@ -34,7 +35,7 @@ const Right = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding-right: 50px;
-  ${mobile({ justifyContent: 'center', paddingRight: '0px' })};
+  ${mobile({ justifyContent: 'space-between', paddingRight: '0px' })};
 `
 
 const MenuItem = styled.div`
@@ -42,7 +43,7 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin: 0 15px;
   justify-content: space-between;
-  ${mobile({ fontSize: '1rem', margin: '5px', padding: '0 40px' })};
+  ${mobile({ fontSize: '1rem', margin: '3px', padding: '0 40px' })};
 `
 const Title = styled.h1`
   text-decoration: none;
@@ -66,7 +67,7 @@ function Navbar() {
     <Container>
       <Wrapper>
         <Title>
-          <Link to="/" style={{ color: '#000000' }}>
+          <Link to="/" style={{color: '#000000',textDecoration:'none'}}>
             Swift Snack
           </Link>
         </Title>
@@ -76,7 +77,7 @@ function Navbar() {
         <Right>
           <Link to="#">
             <MenuItem>
-              <Button style={btn} border="pill">
+              <Button style={btn} >
                 Call Waiter <AiFillAlert />
               </Button>
             </MenuItem>
@@ -86,7 +87,6 @@ function Navbar() {
               <CDBContainer>
                 <IoFastFoodOutline style={icon} />
                 <CDBBadge
-                  color="primary"
                   style={btn}
                   size="small"
                   borderType="pill"
