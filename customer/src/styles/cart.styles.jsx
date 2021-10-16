@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   font-weight: bold;
-  line-height:50px;
+  line-height: 50px;
   text-align: center;
 `
 
@@ -37,18 +37,21 @@ export const TopButton = styled.button`
   // opacity: 0.5;
   padding: 10px;
   font-weight: 600;
-  cursor: pointer;
-  border: none;
+  cursor: 'pointer';
+  border: '1px solid';
   background-color: ${(props) =>
-    props.type === 'filled' ? '#FA4A0C' : 'transparent'};
-  color: ${(props) => props.type === 'filled' && 'white'};
+    props.t === 'filled' ? '#FA4A0C' : 'transparent'};
+  color: ${(props) => props.t === 'filled' && 'white'};
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   ${mobile({
     padding: '6px',
     fontWeight: '500',
     margin: '3px',
-    border: 'filled',
     fontSize: '12px',
-  })}
+  })};
 `
 
 export const Bottom = styled.div`
@@ -101,14 +104,14 @@ export const Total = styled.div`
   height: 40px;
   font-size: 30px;
   color: #fa4a0c;
-    ${mobile({
-      // paddingLeft: '15px',
-      textAlign: 'center',
-      backgroundColor: 'white',
-      margin: '10px 20px',
-      fontSize: '20px',
-      borderRadius: '30px',
-    })};
+  ${mobile({
+    // paddingLeft: '15px',
+    textAlign: 'center',
+    backgroundColor: 'white',
+    margin: '10px 20px',
+    fontSize: '20px',
+    borderRadius: '30px',
+  })};
 `
 export const TableNumber = styled.span`
   display: flex;

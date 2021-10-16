@@ -1,15 +1,15 @@
 export function getCartItems() {
   const cartItems = localStorage.getItem('cart') || undefined
   if (cartItems) return JSON.parse(cartItems)
+  else return undefined
 }
 
 export function clearCart() {
-  const cartItems = localStorage.getItem('cart')
-  cartItems && localStorage.removeItem('cart')
+  if (localStorage.getItem('cart')) localStorage.removeItem('cart')
 }
 
 export function addCartItem(item) {
-  console.log(item)
+  // console.log(item)
   var cartItems = localStorage.getItem('cart') || []
 
   if (cartItems.length) {

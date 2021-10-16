@@ -24,6 +24,11 @@ const Menu = ({ menu }) => {
     // props.search(inputRef.current.value)
   }
 
+  function handleAdd(item) {
+    console.log(item)
+    addCartItem(item)
+  }
+
   return (
     <Container>
       <Form onSubmit={submitHandler}>
@@ -44,7 +49,7 @@ const Menu = ({ menu }) => {
             </Title>
             <Desc>{item.desc}</Desc>
             <Time>Time: {item.prepare} mins</Time>
-            <Button onClick={() => addCartItem(item)}>Add to List</Button>
+            <Button onClick={() => handleAdd(item)}>Add to List</Button>
           </Content>
         </Wrapper>
       ))}
