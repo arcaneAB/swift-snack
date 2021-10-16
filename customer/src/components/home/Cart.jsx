@@ -1,6 +1,6 @@
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import Navbar from '../Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { collection, addDoc } from 'firebase/firestore'
 import {
   Container,
   Title,
@@ -10,14 +10,13 @@ import {
   Product,
   Image,
   ProductName,
-  ProductAmountContainer,
-  ProductAmount,
   ProductPrice,
   Total,
   Bottom,
   TableNumber,
 } from '../../styles/cart.styles'
 import { getCartItems } from '../../services/Localstorage'
+import { db } from '../../services/Firebase'
 
 function calculateTotalPrice(cartItems) {
   var total = 0
@@ -27,19 +26,23 @@ function calculateTotalPrice(cartItems) {
     })
   return total
 }
-function totalOfItems(cartItems) {
-  var total = 0
-  if(cartItems)
-  cartItems.forEach((item) => {
-    total += total+1
-  })
-  return total
-}
 
 const Cart = () => {
-  const cart = getCartItems()
-  console.log('cart 🛒', cart)
+  const history = useHistory()
+
+  const cart = getCartItems() || []
+  // console.log('cart 🛒', cart)
   const totalPrice = calculateTotalPrice(cart)
+
+  async function handleOrder() {
+    // console.log('place order btn')
+    try {
+      await addDoc(collection(db, 'orders'), { table: 21, dishes: { ...cart } })
+    } catch (e) {
+      console.error('Error adding document: ', e)
+    }
+    history.push('/order-successful')
+  }
 
   return (
     <Container>
@@ -55,8 +58,8 @@ const Cart = () => {
         <Bottom>
           <div>
             {cart &&
-              cart.map((item) => (
-                <Product key={item.key}>
+              cart.map((item, id) => (
+                <Product key={id}>
                   <Image alt={item.title} src={item.img} />
                   <ProductName>
                     <span>
@@ -68,8 +71,8 @@ const Cart = () => {
                       <AiOutlinePlus />
                     </ProductAmountContainer> */}
                     <ProductPrice>
-                      {'Rs. '}
-                      {item.price}
+                      {'Rs. '} {'  '}
+                      {item.price} {'   /-'}
                     </ProductPrice>
                   </ProductName>
                 </Product>
@@ -79,7 +82,13 @@ const Cart = () => {
             <b>Total Price: </b>
             <span>Rs. {totalPrice}</span>
           </Total>
-          <TopButton type="filled">PLACE ORDER</TopButton>
+          <TopButton
+            t="filled"
+            onClick={() => handleOrder()}
+            disabled={cart.length === 0}
+          >
+            PLACE ORDER
+          </TopButton>
         </Bottom>
       </Wrapper>
     </Container>
