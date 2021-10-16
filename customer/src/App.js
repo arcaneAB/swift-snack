@@ -3,6 +3,7 @@ import Login from './components/auth/Login'
 import Home from './components/home/Home'
 import ForgotPass from './components/auth/ForgotPass'
 import { AuthProvider } from './contexts/AuthContext'
+
 // import PrivateRoute from './utils/PrivateRoute'
 
 function App() {
