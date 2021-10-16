@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   {
     id: 1,
     title: 'Dhokla',
@@ -81,4 +81,4 @@ const data = [
     desc: `Daal Baati is an Indian dish of daal (lentils) and baati (hard wheat rolls).`,
   },
 ]
-export default data;
+export default data

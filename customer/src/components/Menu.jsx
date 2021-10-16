@@ -1,6 +1,4 @@
-import { useRef } from "react";
-import { connect } from "react-redux";
-import { addChart, search, categoryButton } from "../actions/action";
+import { useRef } from 'react'
 import {
   Container,
   Form,
@@ -14,14 +12,16 @@ import {
   Price,
   Desc,
   Button,
-} from "./Menu_Style";
+} from './menu.styles'
+import data from '../utils/data'
 
-const Menu = (props) => {
-  const inputRef = useRef();
+const Menu = () => {
+  const inputRef = useRef()
   const submitHandler = (e) => {
-    e.preventDefault();
-    props.search(inputRef.current.value);
-  };
+    e.preventDefault()
+    // props.search(inputRef.current.value)
+  }
+
   return (
     <Container>
       <Form onSubmit={submitHandler}>
@@ -32,38 +32,21 @@ const Menu = (props) => {
         />
         <Search type="submit">Search</Search>
       </Form>
-      {props.menuList.map((item) => {
-        return (
-          <Wrapper key={item.id}>
-            <Image src={item.img}></Image>
-            <Content>
-              <Title>
-                <Subtitle>{item.title}</Subtitle>
-                <Price>Rs. {item.price}</Price>
-              </Title>
-              <Desc>{item.desc}</Desc>
-              <Button
-                onClick={() => {
-                  props.addChart(item);
-                }}
-              >
-                Add to List
-              </Button>
-            </Content>
-          </Wrapper>
-        );
-      })}
+      {data.map((item) => (
+        <Wrapper key={item.id}>
+          <Image src={item.img}></Image>
+          <Content>
+            <Title>
+              <Subtitle>{item.title}</Subtitle>
+              <Price>Rs. {item.price}</Price>
+            </Title>
+            <Desc>{item.desc}</Desc>
+            <Button>Add to List</Button>
+          </Content>
+        </Wrapper>
+      ))}
     </Container>
-  );
-};
+  )
+}
 
-const mapStateToProps = (state, props) => {
-  return {
-    menuList: state.menuList,
-    cart: state.cart,
-  };
-};
-
-export default connect(mapStateToProps, { addChart, search, categoryButton })(
-  Menu
-);
+export default Menu

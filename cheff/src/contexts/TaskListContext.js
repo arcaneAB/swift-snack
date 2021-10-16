@@ -4,9 +4,9 @@ import orders from '../components/orders'
 
 export const TaskListContext = createContext()
 
-const TaskListContextProvider = props => {
+const TaskListContextProvider = (props) => {
   // const initialState = JSON.parse(localStorage.getItem('tasks')) || []
-  const initialState = orders;
+  const initialState = orders
   const [tasks, setTasks] = useState(initialState)
 
   useEffect(() => {
@@ -16,13 +16,13 @@ const TaskListContextProvider = props => {
   const [editItem, setEditItem] = useState(null)
 
   // Add tasks
-  const addTask = table => {
+  const addTask = (table) => {
     setTasks([...tasks, { table, id: uuid() }])
   }
 
   // Remove tasks
-  const removeTask = id => {
-    setTasks(tasks.filter(task => task.id !== id))
+  const removeTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
   }
 
   // Clear tasks
@@ -31,15 +31,17 @@ const TaskListContextProvider = props => {
   }
 
   // Find task
-  const findItem = id => {
-    const item = tasks.find(task => task.id === id)
+  const findItem = (id) => {
+    const item = tasks.find((task) => task.id === id)
 
     setEditItem(item)
   }
 
   // Edit task
   const editTask = (title, id) => {
-    const newTasks = tasks.map(task => (task.id === id ? { title, id } : task))
+    const newTasks = tasks.map((task) =>
+      task.id === id ? { title, id } : task
+    )
 
     console.log(newTasks)
 
@@ -56,7 +58,7 @@ const TaskListContextProvider = props => {
         clearList,
         findItem,
         editTask,
-        editItem
+        editItem,
       }}
     >
       {props.children}
