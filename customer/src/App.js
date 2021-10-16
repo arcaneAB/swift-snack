@@ -3,6 +3,7 @@ import Login from './components/auth/Login'
 import Home from './components/home/Home'
 import ForgotPass from './components/auth/ForgotPass'
 import { AuthProvider } from './contexts/AuthContext'
+import Cart from './components/home/Cart'
 
 // import PrivateRoute from './utils/PrivateRoute'
 
@@ -13,6 +14,7 @@ function App() {
         <AuthProvider>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/cart" component={Cart} />
 
             <Route exact path="/auth/login" component={Login} />
             <Route exact path="/auth/forgot-password" component={ForgotPass} />

@@ -1,6 +1,6 @@
 export function getCartItems() {
   const cartItems = localStorage.getItem('cart')
-  return JSON.parse(cartItems) || undefined
+  return JSON.parse(cartItems) || []
 }
 
 export function clearCart() {
