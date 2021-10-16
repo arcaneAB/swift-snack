@@ -11,34 +11,36 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
-margin-top: 160px;  
-display: flex;
+  margin-top: 160px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `
 
 export const Title = styled.h1`
-  font-weight: 300;
+  font-weight: bold;
+  line-height:50px;
   text-align: center;
 `
 
 export const Top = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 20px;
   width: 80%;
 `
 
 export const TopButton = styled.button`
   border-radius: 10px;
+  // opacity: 0.5;
   padding: 10px;
   font-weight: 600;
   cursor: pointer;
-  border: ${(props) => props.type === 'filled' && 'none'};
+  border: none;
   background-color: ${(props) =>
-    props.type === 'filled' ? 'black' : 'transparent'};
+    props.type === 'filled' ? '#FA4A0C' : 'transparent'};
   color: ${(props) => props.type === 'filled' && 'white'};
   ${mobile({
     padding: '6px',
@@ -57,17 +59,17 @@ export const Bottom = styled.div`
 
 export const Product = styled.div`
   display: flex;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid black;
-  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 3px;
+  background-color: #e3e3e3;
+  border-radius: 30px;
 `
 export const Image = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border: 0.25rem solid black;
-  border-radius: 10px;
+  border-radius: 60%;
 `
 
 export const ProductName = styled.span`
@@ -98,20 +100,20 @@ export const Total = styled.div`
   margin: 20px 0 0 120px;
   height: 40px;
   font-size: 30px;
-  border: 1px solid black;
-
-  ${mobile({
-    paddingLeft: '15px',
-    backgroundColor: '#f0ee97',
-    margin: '10px 20px',
-    fontSize: '20px',
-    border: '1px solid black',
-    borderRadius: '10px',
-  })}
+  color: #fa4a0c;
+    ${mobile({
+      // paddingLeft: '15px',
+      textAlign: 'center',
+      backgroundColor: 'white',
+      margin: '10px 20px',
+      fontSize: '20px',
+      borderRadius: '30px',
+    })};
 `
 export const TableNumber = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 20px;
+  color: #fa4a0c;
 `
