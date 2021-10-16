@@ -12,8 +12,9 @@ import {
   Price,
   Desc,
   Button,
+  Time,
 } from './styles/menu.styles'
-import data from '../utils/data'
+// import data from '../utils/data'
 
 const Menu = ({ menu }) => {
   const inputRef = useRef()
@@ -41,6 +42,7 @@ const Menu = ({ menu }) => {
               <Price>Rs. {item.price}</Price>
             </Title>
             <Desc>{item.desc}</Desc>
+            <Time>Time: {item.prepare} mins</Time>
             <Button>Add to List</Button>
           </Content>
         </Wrapper>
