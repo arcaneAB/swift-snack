@@ -7,6 +7,7 @@ export const btn = {
   top: '30px',
   border: 'none',
   fontSize: '14px',
+  display: 'flex',
 }
 export const icon = {
   color: '#FA4A0C',
