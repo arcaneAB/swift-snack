@@ -61,23 +61,34 @@ function ForgotPass() {
 
               <button
                 type="submit"
-                className="btn btn-primary d-block mx-auto px-5 rounded-0"
+                className="btn btn-primary d-block mx-auto px-5"
+                style={{
+                  backgroundColor: '#fa4a0c',
+                  borderRadius: '30px',
+                  border: 'none',
+                }}
                 disabled={loading}
               >
-                {loading ? 'loading...' : 'Log In'}
+                {loading ? 'loading...' : 'Send Email'}
               </button>
             </form>
           </div>
 
           <Link
-            to="/login"
+            to="/auth/login"
             className="w-100 text-center mt-1 text-decoration-none"
+            style={{
+              color: '#fa4a0c',
+            }}
           >
             Go back to log in
           </Link>
           <Link
             to="/forgot-email"
             className="w-100 text-center mt-1 mb-4 text-decoration-none"
+            style={{
+              color: '#fa4a0c'
+            }}
           >
             Forgot Username or email ?
           </Link>

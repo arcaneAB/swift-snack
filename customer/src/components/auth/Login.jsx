@@ -70,7 +70,12 @@ function Login() {
 
               <button
                 type="submit"
-                className="btn btn-primary d-block mx-auto px-5 rounded-0"
+                className="btn btn-primary d-block mx-auto px-5"
+                style={{
+                  backgroundColor: '#fa4a0c',
+                  borderRadius: '30px',
+                  border: 'none',
+                }}
                 disabled={loading}
               >
                 {loading ? 'loading...' : 'Log In'}
@@ -80,7 +85,11 @@ function Login() {
 
           <Link
             to="/auth/forgot-password"
-            className="w-100 text-center mt-1 mb-4 text-decoration-none"
+            className="w-100 mt-1 mb-4 text-decoration-none"
+            style={{
+              color: '#fa4a0c',
+              margin: "5px 40px",
+            }}
           >
             Forgot Password?
           </Link>
