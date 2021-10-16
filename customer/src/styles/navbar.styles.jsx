@@ -6,8 +6,14 @@ export const btn = {
   borderRadius: '30px',
   top: '30px',
   border: 'none',
-  fontSize: '14px',
+  fontSize: '20px',
+  color: 'white',
+  padding: '8px',
+  // height: '60px'
   display: 'flex',
+  textDecoration: 'underline',
+  textDecorationColor: '#FA4A0C',
+  textDecorationThickness: '0.0000001px'
 }
 export const icon = {
   color: '#FA4A0C',
@@ -51,7 +57,7 @@ export const MenuItem = styled.div`
   cursor: pointer;
   margin: 0 15px;
   justify-content: space-between;
-  ${mobile({ fontSize: '1rem', margin: '3px 0', padding: '0 45px 0 47px' })};
+  ${mobile({ fontSize: '1rem', margin: '3px 0', padding: '0 50px 0 50px' })};
 `
 export const Title = styled.h1`
   text-decoration: none;
@@ -66,6 +72,6 @@ export const Register = styled.span`
   width: 58px;
   height: 26px;
   left: 311px;
-  top: 16px;
+  top: 30px;
   bottom: 40px ${mobile({ marginRight: '0px', padding: '0' })};
 `

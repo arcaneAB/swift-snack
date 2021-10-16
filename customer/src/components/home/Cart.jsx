@@ -82,13 +82,15 @@ const Cart = () => {
             <b>Total Price: </b>
             <span>Rs. {totalPrice}</span>
           </Total>
-          <TopButton
-            t="filled"
-            onClick={() => handleOrder()}
-            disabled={cart.length === 0}
-          >
-            PLACE ORDER
-          </TopButton>
+          <Link to="/order-success">
+            <TopButton
+              t="filled"
+              onClick={() => handleOrder()}
+              disabled={cart.length === 0}
+            >
+              PLACE ORDER
+            </TopButton>
+          </Link>
         </Bottom>
       </Wrapper>
     </Container>
