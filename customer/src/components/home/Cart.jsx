@@ -1,4 +1,3 @@
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import Navbar from '../Navbar'
 import { Link } from 'react-router-dom'
 import {
@@ -10,8 +9,6 @@ import {
   Product,
   Image,
   ProductName,
-  ProductAmountContainer,
-  ProductAmount,
   ProductPrice,
   Total,
   Bottom,
@@ -27,18 +24,10 @@ function calculateTotalPrice(cartItems) {
     })
   return total
 }
-function totalOfItems(cartItems) {
-  var total = 0
-  if(cartItems)
-  cartItems.forEach((item) => {
-    total += total+1
-  })
-  return total
-}
 
 const Cart = () => {
   const cart = getCartItems()
-  console.log('cart 🛒', cart)
+  // console.log('cart 🛒', cart)
   const totalPrice = calculateTotalPrice(cart)
 
   return (
@@ -55,12 +44,12 @@ const Cart = () => {
         <Bottom>
           <div>
             {cart &&
-              cart.map((item) => (
-                <Product key={item.key}>
+              cart.map((item, id) => (
+                <Product key={id}>
                   <Image alt={item.title} src={item.img} />
                   <ProductName>
                     <span>
-                      <b>Name:</b> {item.title}
+                      <b>{item.title}</b>
                     </span>
                     {/* <ProductAmountContainer>
                       <AiOutlineMinus />
@@ -68,8 +57,8 @@ const Cart = () => {
                       <AiOutlinePlus />
                     </ProductAmountContainer> */}
                     <ProductPrice>
-                      {'Rs. '}
-                      {item.price}
+                      {'Rs. '} {'  '}
+                      {item.price} {'   /-'}
                     </ProductPrice>
                   </ProductName>
                 </Product>
