@@ -43,20 +43,20 @@ function Navbar() {
             Swift Snack
           </Link>
         </Title>
-        <Link to="#">
+        <Link to="/auth/login">
           <Register>Sign in</Register>
         </Link>
         <Right>
           <Link to="#">
             <MenuItem>
-              <Button
+              <button
                 style={btn}
-                variant="outline-light"
+                // variant="outline-light"
                 onClick={() => setShow(true)}
               >
                 Call Waiter <span className="p-1"></span>
-                <AiFillAlert size="20px" />
-              </Button>
+                <AiFillAlert size="26px" />
+              </button>
             </MenuItem>
           </Link>
           <MenuItem>
