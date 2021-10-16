@@ -60,7 +60,7 @@ const Cart = () => {
                   <Image alt={item.title} src={item.img} />
                   <ProductName>
                     <span>
-                      <b>Name:</b> {item.title}
+                      <b>{item.title}</b>
                     </span>
                     {/* <ProductAmountContainer>
                       <AiOutlineMinus />
