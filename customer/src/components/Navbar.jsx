@@ -3,6 +3,7 @@ import { CDBBadge, CDBContainer } from 'cdbreact'
 import { Link } from 'react-router-dom'
 import { IoFastFoodOutline } from 'react-icons/io5'
 import Button from 'react-bootstrap/Button'
+// import {totalItems} from './home/Cart'
 import {
   Container,
   Wrapper,
@@ -39,7 +40,7 @@ function Navbar() {
               <CDBContainer>
                 <IoFastFoodOutline style={icon} />
                 <CDBBadge style={btn} size="small" borderType="pill">
-                  {/* {props.cart.length} */}5
+                  {/* {totalItems} */}100
                 </CDBBadge>
               </CDBContainer>
             </Link>

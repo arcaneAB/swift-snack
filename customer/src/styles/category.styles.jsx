@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import mobile from './Responsive'
 
 export const Wrapper = styled.div`
+padding-top:170px;
   margin-bottom: 5px;
 `
 

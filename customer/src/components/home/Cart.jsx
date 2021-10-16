@@ -15,10 +15,11 @@ import {
   ProductPrice,
   Total,
   Bottom,
+  TableNumber,
 } from '../../styles/cart.styles'
 import { getCartItems } from '../../services/Localstorage'
 
-function calculateTotal(cartItems) {
+function calculateTotalPrice(cartItems) {
   var total = 0
   if (cartItems)
     cartItems.forEach((item) => {
@@ -26,11 +27,19 @@ function calculateTotal(cartItems) {
     })
   return total
 }
+function totalOfItems(cartItems) {
+  var total = 0
+  if(cartItems)
+  cartItems.forEach((item) => {
+    total += total+1
+  })
+  return total
+}
 
 const Cart = () => {
   const cart = getCartItems()
   console.log('cart 🛒', cart)
-  const totalPrice = calculateTotal(cart)
+  const totalPrice = calculateTotalPrice(cart)
 
   return (
     <Container>
@@ -41,8 +50,7 @@ const Cart = () => {
           <Link to="/">
             <TopButton>CONTINUE ORDERING</TopButton>
           </Link>
-
-          <TopButton type="filled">PLACE ORDER</TopButton>
+          <TableNumber>Table: {'7'}</TableNumber>
         </Top>
         <Bottom>
           <div>
@@ -54,11 +62,11 @@ const Cart = () => {
                     <span>
                       <b>Name:</b> {item.title}
                     </span>
-                    <ProductAmountContainer>
+                    {/* <ProductAmountContainer>
                       <AiOutlineMinus />
                       <ProductAmount>1</ProductAmount>
                       <AiOutlinePlus />
-                    </ProductAmountContainer>
+                    </ProductAmountContainer> */}
                     <ProductPrice>
                       {'Rs. '}
                       {item.price}
@@ -68,16 +76,15 @@ const Cart = () => {
               ))}
           </div>
           <Total>
-            <b>Total Price:</b>
-            <span>
-              Rs.
-              {totalPrice}
-            </span>
+            <b>Total Price: </b>
+            <span>Rs. {totalPrice}</span>
           </Total>
+          <TopButton type="filled">PLACE ORDER</TopButton>
         </Bottom>
       </Wrapper>
     </Container>
   )
 }
 
+// export const totalItems = totalOfItems(Cart);
 export default Cart

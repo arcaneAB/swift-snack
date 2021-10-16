@@ -11,7 +11,8 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
-  display: flex;
+margin-top: 160px;  
+display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -107,4 +108,10 @@ export const Total = styled.div`
     border: '1px solid black',
     borderRadius: '10px',
   })}
+`
+export const TableNumber = styled.span`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
 `
