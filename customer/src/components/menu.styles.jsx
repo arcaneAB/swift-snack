@@ -1,59 +1,59 @@
-import styled from "styled-components";
-import mobile from "./Responsive";
+import styled from 'styled-components'
+import mobile from './Responsive'
 
-export const Container = styled.div `
+export const Container = styled.div`
   width: 99%;
   display: flex;
   flex-wrap: wrap;
-`;
-export const Wrapper = styled.div `
+`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 33%;
   margin: 0 3px 10px 0;
-  ${mobile({ width: "90%", padding: "10px" })};
-`;
-export const Image = styled.img `
+  ${mobile({ width: '90%', padding: '10px' })};
+`
+export const Image = styled.img`
   width: 30%;
   height: 175px;
   object-fit: cover;
   border: 0.25rem solid black;
   border-radius: 10px;
-`;
-export const Content = styled.div `
+`
+export const Content = styled.div`
   position: relative;
   padding-left: 10px;
-`;
-export const Title = styled.div `
+`
+export const Title = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 2px solid gray;
-`;
-export const Subtitle = styled.p ``;
-export const Price = styled.p ``;
-export const Desc = styled.div `
+`
+export const Subtitle = styled.p``
+export const Price = styled.p``
+export const Desc = styled.div`
   padding-top: 10px;
-`;
+`
 
-export const Form = styled.form `
+export const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
-`;
-export const Input = styled.input `
+`
+export const Input = styled.input`
   height: 50px;
   width: 644px;
   border-radius: 8px;
   font-size: 26px;
-  ${mobile({ height: "40px", width: "65%", fontSize: "18px" })};
+  ${mobile({ height: '40px', width: '65%', fontSize: '18px' })};
   :hover {
     background: rgba(100, 100, 100, 0.08);
   }
-`;
-export const Search = styled.button `
+`
+export const Search = styled.button`
   background-color: #f6fcabce;
   height: 50px;
   width: 138px;
@@ -63,9 +63,9 @@ export const Search = styled.button `
   :hover {
     background-color: #9afc59ce;
   }
-  ${mobile({ height: "40px", width: "20%", fontSize: "14px" })};
-`;
-export const Button = styled.button `
+  ${mobile({ height: '40px', width: '20%', fontSize: '14px' })};
+`
+export const Button = styled.button`
   position: absolute;
   top: 150px;
   left: 105px;
@@ -98,4 +98,4 @@ export const Button = styled.button `
       transform: translate3d(2px, 0, 0);
     }
   }
-`;
+`
