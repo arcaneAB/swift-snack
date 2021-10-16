@@ -23,12 +23,9 @@ const Home = () => {
     async function main() {
       const querySnapshot = await getDocs(collection(db, 'menu'))
 
-      console.error('lol', querySnapshot)
-
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log(doc.id, ' => ', doc.data())
-
         setMenu((menu) => [...menu, doc.data()])
       })
     }

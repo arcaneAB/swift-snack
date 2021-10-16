@@ -7,8 +7,6 @@ import {
   Wrapper,
   Top,
   TopButton,
-  TopTexts,
-  TopText,
   Product,
   Image,
   ProductName,
@@ -22,16 +20,18 @@ import { getCartItems } from '../../services/Localstorage'
 
 function calculateTotal(cartItems) {
   var total = 0
-  cartItems.forEach((item) => {
-    total += item.price
-  })
+  if (cartItems)
+    cartItems.forEach((item) => {
+      total += item.price
+    })
   return total
 }
 
-const cart = getCartItems()
-const totalPrice = calculateTotal(cart)
-
 const Cart = () => {
+  const cart = getCartItems()
+  console.log('cart 🛒', cart)
+  const totalPrice = calculateTotal(cart)
+
   return (
     <Container>
       <Navbar />
@@ -41,33 +41,31 @@ const Cart = () => {
           <Link to="/">
             <TopButton>CONTINUE ORDERING</TopButton>
           </Link>
-          <TopTexts>
-            <TopText>Total items({cart.length})</TopText>
-            {/* <TopText>Your Wishlist (0)</TopText> */}
-          </TopTexts>
+
           <TopButton type="filled">PLACE ORDER</TopButton>
         </Top>
         <Bottom>
           <div>
-            {cart.map((item) => (
-              <Product key={item.key}>
-                <Image alt={item.title} src={item.img} />
-                <ProductName>
-                  <span>
-                    <b>Name:</b> {item.title}
-                  </span>
-                  <ProductAmountContainer>
-                    <AiOutlineMinus />
-                    <ProductAmount>1</ProductAmount>
-                    <AiOutlinePlus />
-                  </ProductAmountContainer>
-                  <ProductPrice>
-                    {'Rs. '}
-                    {item.price}
-                  </ProductPrice>
-                </ProductName>
-              </Product>
-            ))}
+            {cart &&
+              cart.map((item) => (
+                <Product key={item.key}>
+                  <Image alt={item.title} src={item.img} />
+                  <ProductName>
+                    <span>
+                      <b>Name:</b> {item.title}
+                    </span>
+                    <ProductAmountContainer>
+                      <AiOutlineMinus />
+                      <ProductAmount>1</ProductAmount>
+                      <AiOutlinePlus />
+                    </ProductAmountContainer>
+                    <ProductPrice>
+                      {'Rs. '}
+                      {item.price}
+                    </ProductPrice>
+                  </ProductName>
+                </Product>
+              ))}
           </div>
           <Total>
             <b>Total Price:</b>
