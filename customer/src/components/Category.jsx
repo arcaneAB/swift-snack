@@ -5,22 +5,28 @@ const Wrapper = styled.div`
   margin-bottom: 5px;
 `
 const Button = styled.button`
-  background-color: #f6fcabce;
-  cursor: pointer;
-  width: 100px;
-  height: 50px;
-  margin: 5px;
-  border-radius: 10px;
-  :hover {
-    background-color: #9afc59ce;
-  }
+  border: none;
+  border-radius:40%
+  width: 45px;
+  height: 20px;
+  left: 47px;
+  top: 151px;
+
+  font-family: Actor;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #fa4a0c;
+  backgound-color: white;
   ${mobile({ width: '80px', height: '40px', margin: '3px' })}
 `
 
 const Category = () => {
   return (
     <Wrapper>
-      {['ALL', 'SNACKS', 'MEALS', 'DESSERTS'].map((category) => (
+      {['All', 'Snacks', 'Meals', 'Desserts'].map((category) => (
         <Button key={category}>{category}</Button>
       ))}
     </Wrapper>

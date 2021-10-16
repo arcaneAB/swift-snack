@@ -12,7 +12,8 @@ import {
   Price,
   Desc,
   Button,
-} from './menu.styles'
+} from './styles/menu.styles'
+import data from '../utils/data'
 
 const Menu = ({ menu }) => {
   const inputRef = useRef()
