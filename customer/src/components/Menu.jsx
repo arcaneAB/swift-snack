@@ -13,9 +13,8 @@ import {
   Desc,
   Button,
 } from './menu.styles'
-import data from '../utils/data'
 
-const Menu = () => {
+const Menu = ({ menu }) => {
   const inputRef = useRef()
   const submitHandler = (e) => {
     e.preventDefault()
@@ -32,7 +31,7 @@ const Menu = () => {
         />
         <Search type="submit">Search</Search>
       </Form>
-      {data.map((item) => (
+      {menu.map((item) => (
         <Wrapper key={item.id}>
           <Image src={item.img}></Image>
           <Content>

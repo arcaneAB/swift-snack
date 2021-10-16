@@ -48,7 +48,7 @@ function Navbar() {
           <Link to="/">
             <MenuItem>Home</MenuItem>
           </Link>
-          <Link to="#">
+          <Link to="/">
             <MenuItem>Register</MenuItem>
           </Link>
           <Link to="#">
