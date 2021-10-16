@@ -17,7 +17,7 @@ import {
   ProductPrice,
   Total,
   Bottom,
-} from '../styles/cart.styles'
+} from '../../styles/cart.styles'
 import { getCartItems } from '../../services/Localstorage'
 
 function calculateTotal(cartItems) {

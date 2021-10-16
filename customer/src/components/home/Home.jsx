@@ -17,7 +17,7 @@ const Container = styled.div`
 const Home = () => {
   const [menu, setMenu] = useState([])
 
-  console.log(menu)
+  // console.log(menu)
 
   useEffect(() => {
     async function main() {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import mobile from '../Responsive'
+import mobile from './Responsive'
 
 export const Container = styled.div`
   width: 99%;
@@ -25,7 +25,6 @@ export const Content = styled.div`
   padding-left: 10px;
 `
 export const Title = styled.div`
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -40,7 +39,6 @@ export const Subtitle = styled.p`
   font-style: normal;
   font-weight: bold;
   color: black;
-
 `
 export const Price = styled.p``
 export const Desc = styled.div`
@@ -54,7 +52,6 @@ export const Form = styled.form`
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
-  
 `
 export const Input = styled.input`
   height: 50px;
@@ -87,7 +84,7 @@ export const Button = styled.button`
   background-color: #fa4a0c;
   color: white;
   border-radius: 30px;
-  border:none;
+  border: none;
   height: 26px;
   cursor: pointer;
   padding: 2px 10px;

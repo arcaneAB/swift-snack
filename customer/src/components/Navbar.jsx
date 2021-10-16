@@ -12,7 +12,7 @@ import {
   MenuItem,
   icon,
   btn,
-} from '../components/styles/navbar.styles'
+} from '../styles/navbar.styles'
 
 function Navbar() {
   return (
