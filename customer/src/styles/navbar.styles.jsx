@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import mobile from '../Responsive'
+import mobile from './Responsive'
 
 export const btn = {
   backgroundColor: '#FA4A0C',

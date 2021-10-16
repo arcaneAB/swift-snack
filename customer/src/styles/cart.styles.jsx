@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import mobile from '../Responsive'
+import mobile from './Responsive'
 
 export const Container = styled.div`
   min-height: 100vh;

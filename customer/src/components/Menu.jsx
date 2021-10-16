@@ -13,7 +13,7 @@ import {
   Desc,
   Button,
   Time,
-} from './styles/menu.styles'
+} from '../styles/menu.styles'
 // import data from '../utils/data'
 
 const Menu = ({ menu }) => {
