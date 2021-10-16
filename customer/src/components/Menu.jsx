@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { addCartItem } from '../services/Localstorage'
 import {
   Container,
   Form,
@@ -43,7 +44,7 @@ const Menu = ({ menu }) => {
             </Title>
             <Desc>{item.desc}</Desc>
             <Time>Time: {item.prepare} mins</Time>
-            <Button>Add to List</Button>
+            <Button onClick={() => addCartItem(item)}>Add to List</Button>
           </Content>
         </Wrapper>
       ))}

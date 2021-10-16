@@ -19,6 +19,11 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
+  position: fixed;
+  top: 0px;
+  border-radius: 0 0 24px 24px;
+  background-color: #c8c8c8;
+  z-index: 3;
   display: flex;
   align-items: center;
   ${mobile({ display: 'flex', flexDirection: 'column' })};
