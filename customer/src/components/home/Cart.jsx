@@ -37,7 +37,7 @@ const Cart = () => {
   async function handleOrder() {
     // console.log('place order btn')
     try {
-      await addDoc(collection(db, 'orders'), { table: 21, dishes: { ...cart } })
+      await addDoc(collection(db, 'orders'), { table: 21, dishes: [...cart] })
     } catch (e) {
       console.error('Error adding document: ', e)
     }

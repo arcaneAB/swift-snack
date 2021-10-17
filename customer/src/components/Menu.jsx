@@ -48,7 +48,7 @@ const Menu = ({ menu }) => {
               <Price>Rs. {item.price}</Price>
             </Title>
             <Desc>{item.desc}</Desc>
-            <Time>Time: {item.prepare} mins</Time>
+            <Time>Prep time: {item.prepare} mins</Time>
             <Button onClick={() => handleAdd(item)}>Add to List</Button>
           </Content>
         </Wrapper>
