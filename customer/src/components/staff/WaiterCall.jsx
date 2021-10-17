@@ -1,5 +1,9 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import { db } from '../../services/Firebase'
+import { collection, getDocs } from 'firebase/firestore'
 import { AiOutlineAlert, AiOutlineCheckSquare } from 'react-icons/ai'
+
 const brandHead = {
   display: 'flex',
   justifyContent: 'space-between',
@@ -28,37 +32,55 @@ const listHead = {
   fontWeight: 'bold',
 }
 function WaiterCall() {
+  const [calls,setCalls] = useState([])
+  useEffect(() => {
+    async function main() {
+      const querySnapshot = await getDocs(collection(db, 'calls'))
+
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // console.log(doc.id, ' => ', doc.data())
+        setCalls((calls) => [...calls, doc.data()])
+      })
+    }
+
+    main()
+  }, [])
+  function convertTime(fullTime){
+    console.log(Date(fullTime * 1000))
+    const time = Date(fullTime).toLocaleString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+    return time;
+  }
   return (
     <div>
       <h1 style={brandHead}>
-        Swift Snack <AiOutlineAlert />
+        Swift Snack{' '}
+        <Link to="/orders" style={{ textDecoration: 'none', color: '#FA4A0C' }}>
+          <AiOutlineAlert />
+        </Link>
       </h1>
 
       <h2 style={orderHead}>Call of Service</h2>
-      <ul style={listOut}>
-        <li>
-          <div style={listHead}>
-            Table: 7
-            <AiOutlineCheckSquare />
-          </div>
+      {calls.map((call) => (
+        <div>
+          <ul style={listOut}>
+            <li>
+              <div style={listHead}>
+                Table: {call.table}
+                <AiOutlineCheckSquare />
+              </div>
 
-          <div style={timeLine}>
-            <span>Time:</span>
-            <span>2:21 PM</span>
-          </div>
-        </li>
-        <li>
-          <div style={listHead}>
-            Table: 7
-            <AiOutlineCheckSquare />
-          </div>
-
-          <div style={timeLine}>
-            <span>Time:</span>
-            <span>2:21 PM</span>
-          </div>
-        </li>
-      </ul>
+              <div style={timeLine}>
+                <span>Time:</span>
+                <span>{convertTime(call.timestamp)}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      ))}
     </div>
   )
 }
