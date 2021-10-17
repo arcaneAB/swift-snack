@@ -1,5 +1,11 @@
 # swift-snack
 Hack-it-out 21 project
+
+Demo video Link: https://youtu.be/e0A0bEoLQbQ
+Demo link for Customer side: http://swift-snack.surge.sh/
+Demo link for Staff side: http://swift-snack.surge.sh/orders/
+
+
 ![IMG_20211017_075431](https://user-images.githubusercontent.com/75360601/137613849-445d46c0-cec3-4447-9247-699b15e631ff.jpg)
 ![IMG_20211017_075452](https://user-images.githubusercontent.com/75360601/137613850-0bd238ec-cfb1-4165-9b14-757b32c5cda0.jpg)
 ![IMG_20211017_075506](https://user-images.githubusercontent.com/75360601/137613851-cc862de7-1009-48cd-ac72-85be9f52c604.jpg)
