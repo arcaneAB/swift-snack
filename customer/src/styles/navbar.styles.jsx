@@ -12,8 +12,8 @@ export const btn = {
   // height: '60px'
   display: 'flex',
   textDecoration: 'underline',
-  textDecorationColor: '#FA4A0C',
-  textDecorationThickness: '0.0000001px'
+  // textDecorationColor: '#FA4A0C',
+  // textDecorationThickness: '0.0000001px',
 }
 export const icon = {
   color: '#FA4A0C',
@@ -27,8 +27,8 @@ export const Container = styled.div`
   background-color: #c8c8c8;
   z-index: 3;
   width: 100%;
-  height: 60px;
-  margin: 15px;
+  height: 15%;
+  margin: 0px;
   ${mobile({ height: '150px', margin: '0' })};
 `
 
@@ -47,9 +47,10 @@ export const Right = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 50px;
-  ${mobile({ justifyContent: 'space-between', paddingRight: '0px' })};
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  ${mobile({ justifyContent: 'space-between', paddingRight: '20px', paddingLeft:'0px' })};
 `
 
 export const MenuItem = styled.div`
@@ -69,9 +70,17 @@ export const Title = styled.h1`
 export const Register = styled.span`
   color: grey;
   position: absolute;
-  width: 85px;
-  height: 26px;
-  left: 326px;
-  top: 15px;
-  bottom: 40px ${mobile({ marginRight: '0px', padding: '0' })};
+  left: 95%;
+  top: 20%;
+
+
+    ${mobile({
+      marginRight: '0px',
+      padding: '0',
+      width: '85px',
+      height: '26px',
+      left: '320px',
+      top: '18px',
+      bottom: '40px'
+    })};
 `

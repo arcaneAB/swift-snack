@@ -36,7 +36,9 @@ export const TopButton = styled.button`
   border-radius: 10px;
   // opacity: 0.5;
   padding: 10px;
+  margin: 15px;
   font-weight: 600;
+  width: 500px;
   cursor: 'pointer';
   border: '1px solid';
   background-color: ${(props) =>
@@ -51,18 +53,29 @@ export const TopButton = styled.button`
     fontWeight: '500',
     margin: '3px',
     fontSize: '12px',
+    width: '7rem'
   })};
 `
 
 export const Bottom = styled.div`
-  width: 70%;
   display: flex;
-  ${mobile({ display: 'flex', flexDirection: 'column' })}
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin: 10px 3px 10px 3px;
+  // padding: 3%;
+  ${mobile({
+    display: 'flex',
+    flexDirection: 'column',
+    width: '90%',
+    padding: '2%',
+  })}
 `
+
 
 export const Product = styled.div`
   display: flex;
-  padding: 15px;
+  flex-direction: row;
   margin: 15px 3px;
   background-color: #e3e3e3;
   border-radius: 30px;
@@ -117,6 +130,7 @@ export const TableNumber = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 20px;
+  padding: 15px;
   color: #fa4a0c;
 `
+
