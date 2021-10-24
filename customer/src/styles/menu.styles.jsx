@@ -10,16 +10,18 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 33%;
+  width: 30%;
   margin: 10px 3px 10px 3px;
-  ${mobile({ width: '90%', padding: '10px' })};
+  padding: 3%;
+  ${mobile({ width: '90%', padding: '2%' })};
 `
 export const Image = styled.img`
-  width: 100px;
-  height: 150px;
+  width: 150px;
+  height: 180px;
   object-fit: cover;
   border: 0.25rem solid black;
   border-radius: 10%;
+  ${mobile({ width: '100px', height: '150px' })};
 `
 export const Content = styled.div`
   position: relative;
